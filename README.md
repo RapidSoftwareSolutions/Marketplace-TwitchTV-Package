@@ -12,6 +12,29 @@ Your client secret is like a password and we can't show it to you once you leave
 
 When authenticating on behalf of a user, you'll be granted an **access token** that uniquely identifies to us your client and the user. There are a few ways to obtain access tokens, which are described below. An access token has an associated list of scopes that determine what permissions you are allowed on behalf of the authorized Twitch user.
 
+1. Direct user to https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=[`clientId`]&redirect_uri=[`redirectUri`]&scope=[`scope`]&state=`state`
+2. If the user accepts, they will be redirected back to https://[your registered redirect URI]/?code=[CODE]
+3. Use getAccessToken method to get users's `accessToken`.
+
+### Scopes
+
+Example: ...&redirect_uri=[`redirectUri`]&scope=`user_read+user_blocks_edit+channel_stream+channel_feed_edit`
+
++ `user_read`: Read access to non-public user information, such as email address.
++ `user_blocks_edit`: Ability to ignore or unignore on behalf of a user.
++ `user_blocks_read`: Read access to a user's list of ignored users.
++ `user_follows_edit`: Access to manage a user's followed channels.
++ `channel_read`: Read access to non-public channel information, including email address and stream key.
++ `channel_editor`: Write access to channel metadata (game, status, etc).
++ `channel_commercial`: Access to trigger commercials on channel.
++ `channel_stream`: Ability to reset a channel's stream key.
++ `channel_subscriptions`: Read access to all subscribers to your channel.
++ `user_subscriptions`: Read access to subscriptions of a user.
++ `channel_check_subscription`: Read access to check if a user is subscribed to your channel.
++ `chat_login`: Ability to log into chat and send messages.
++ `channel_feed_read`: Ability to view to a channel feed.
++ `channel_feed_edit`: Ability to add posts and reactions to a channel feed.
+
 Read more about Twitch Authentication: https://github.com/justintv/Twitch-API/blob/master/authentication.md
 
 ## TwitchTV.getAccessToken
