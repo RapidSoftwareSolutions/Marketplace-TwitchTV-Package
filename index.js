@@ -28,7 +28,7 @@ for(let func in control) {
         parseUri: true,
         hasSkip:  true,
         query:    {},
-        debug:    true
+        //debug:    true
     };
 
     let {
@@ -74,7 +74,6 @@ for(let func in control) {
             r.callback            = 'success';
             r.contextWrites['to'] = response == '' ? {'message': 'Operations successfuly'} : response;
         } catch(e) {
-            console.log(e);
             r.callback            = 'error';
             r.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
         }

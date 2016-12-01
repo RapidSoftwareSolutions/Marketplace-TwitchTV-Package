@@ -48,7 +48,7 @@ Authenticated, required scope: `user_blocks_edit`
 | user       | String     | Required: The authenticated user
 | target     | String     | User to be blocked
 
-## TwitchTV.deletFromBlockList
+## TwitchTV.deleteFromBlockList
 Delete target from user's block list. 
 Authenticated, required scope: `user_blocks_edit`
 

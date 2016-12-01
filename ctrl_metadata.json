@@ -95,7 +95,7 @@
       "info": "User to be blocked"
     }]
   }, {
-    "name": "deletFromBlockList",
+    "name": "deleteFromBlockList",
     "method": "DELETE",
     "url": "/users/:user/blocks/:target",
     "description": "Delete target from user's block list. Authenticated, required scope: user_blocks_edit",

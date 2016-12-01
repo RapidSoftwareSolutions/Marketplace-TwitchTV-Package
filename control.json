@@ -31,7 +31,7 @@
             "String|target": "!target"
         }
     },
-    "deletFromBlockList": {
+    "deleteFromBlockList": {
         "url": "/users/:user/blocks/:target",
         "method": "DELETE",
         "args": {
