@@ -1,0 +1,1235 @@
+{
+  "package": "TwitchTV",
+  "tagline": "TwitchTV API Package",
+  "description": "The Twitch API enables you to develop your own applications using the rich feature set that we provide",
+  "image": "http://logo.clearbit.com/twitch.tv",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-TwitchTV-Package",
+  "accounts": {
+    "domain": "twitch.tv",
+    "credentials": [
+      "clientId",
+      "clientSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "Getting access tokens",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: Application client secret key"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Required: The authorization code"
+        },
+        {
+          "name": "redirectUri",
+          "type": "String",
+          "info": "Required: Application redirect url"
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "info": "Your provided unique token"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getBlocklist",
+      "description": "Get user's block list. Authenticated, required scope: user_blocks_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: Valid username"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "addToBlockList",
+      "description": "Add target to user's block list. Authenticated, required scope: user_blocks_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: The authenticated user"
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "info": "User to be blocked"
+        }
+      ]
+    },
+    {
+      "name": "deletFromBlockList",
+      "description": "Delete target from user's block list. Authenticated, required scope: user_blocks_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: The authenticated user"
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "info": "User to be unblocked"
+        }
+      ]
+    },
+    {
+      "name": "getChannel",
+      "description": "Get channel object",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to retrieve"
+        }
+      ]
+    },
+    {
+      "name": "getUsersChannel",
+      "description": "Returns a channel object of authenticated user. Authenticated, required scope: channel_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        }
+      ]
+    },
+    {
+      "name": "getChannelVideos",
+      "description": "Get channel's list of videos",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to video retrieve from"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "broadcasts",
+          "type": "Boolean",
+          "info": "Returns only broadcasts when `true`. Otherwise only highlights are returned. Default is `false`"
+        },
+        {
+          "name": "hls",
+          "type": "Boolean",
+          "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`"
+        }
+      ]
+    },
+    {
+      "name": "getChannelFollowingUsers",
+      "description": "Get channel's list of following users",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to follows retrieve for"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600"
+        },
+        {
+          "name": "cursor",
+          "type": "String",
+          "info": "Twitch uses cursoring to paginate long lists of followers. Check _cursor in response body and set cursor to this value to get the next page of results, or use _links.next to navigate to the next page of results"
+        },
+        {
+          "name": "direction",
+          "type": "String",
+          "info": "Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`"
+        }
+      ]
+    },
+    {
+      "name": "getChannelEditors",
+      "description": "Get channel's list of editors. Authenticated, required scope: channel_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to retrieve editors for"
+        }
+      ]
+    },
+    {
+      "name": "updateChannel",
+      "description": "Update channel object. Authenticated, required scope: channel_editor",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to update"
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "info": "Channel's title"
+        },
+        {
+          "name": "game",
+          "type": "String",
+          "info": "Game category to be classified as"
+        },
+        {
+          "name": "delay",
+          "type": "String",
+          "info": "Channel delay in seconds. Requires the channel owner's OAuth token"
+        },
+        {
+          "name": "channelFeedEnabled",
+          "type": "Boolean",
+          "info": "Whether the channel's feed is enabled. Requires the channel owner's OAuth token"
+        }
+      ]
+    },
+    {
+      "name": "resetChannelStreamKey",
+      "description": "Reset channel's stream key. Authenticated, required scope: channel_stream",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to reset stream key for"
+        }
+      ]
+    },
+    {
+      "name": "startCommercialOnChannel",
+      "description": "Start a commercial on channel. Authenticated, required scope: channel_commercial",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to start commercial for"
+        },
+        {
+          "name": "length",
+          "type": "String",
+          "info": "Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes"
+        }
+      ]
+    },
+    {
+      "name": "getChannelTeams",
+      "description": "Get list of teams channel belongs to",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to list teams for"
+        }
+      ]
+    },
+    {
+      "name": "getChannelFeedPosts",
+      "description": "Get channel feed posts. Authenticated, optional scope: channel_feed_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to list posts from"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+        },
+        {
+          "name": "cursor",
+          "type": "String",
+          "info": "Cursor value to begin next page"
+        }
+      ]
+    },
+    {
+      "name": "createPost",
+      "description": "Create post. Authenticated, required scope: channel_feed_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to create feed post for"
+        },
+        {
+          "name": "content",
+          "type": "String",
+          "info": "Required: Content of the post"
+        },
+        {
+          "name": "share",
+          "type": "Boolean",
+          "info": "When set to true, shares the post, with a link to the post URL, on the channel's Twitter if it's connected"
+        }
+      ]
+    },
+    {
+      "name": "getPost",
+      "description": "Get channel feed posts. Authenticated, optional scope: channel_feed_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to retrieve post from"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "Required: Post id to retrieve"
+        }
+      ]
+    },
+    {
+      "name": "deletePost",
+      "description": "Delete post. Authenticated, required scope: channel_feed_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to delete post from"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "Required: Post id to delete"
+        }
+      ]
+    },
+    {
+      "name": "createReactionToPost",
+      "description": "Create reaction to post. Authenticated, required scope: channel_feed_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to create post reaction for"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "Required: Post id to add reaction for"
+        },
+        {
+          "name": "emoteId",
+          "type": "String",
+          "info": "Required: Single emote id (ex: `25` => Kappa) or the string `endorse`"
+        }
+      ]
+    },
+    {
+      "name": "deleteReaction",
+      "description": "Delete reaction. Authenticated, required scope: channel_feed_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to delete post reaction for"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "Required: Post id to delete reaction for"
+        },
+        {
+          "name": "emoteId",
+          "type": "String",
+          "info": "Required: Single emote id (ex: `25` => Kappa) or the string `endorse`"
+        }
+      ]
+    },
+    {
+      "name": "getChatLinks",
+      "description": "Returns a links object to all other chat endpoints",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        }
+      ]
+    },
+    {
+      "name": "getChannelChatBadges",
+      "description": "Get chat badges for channel",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to list badges for"
+        }
+      ]
+    },
+    {
+      "name": "getAllEmoticon",
+      "description": "Returns a list of all emoticon objects for Twitch",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        }
+      ]
+    },
+    {
+      "name": "getEmoticons",
+      "description": "Get list of emoticons",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "emotesets",
+          "type": "String",
+          "info": "Emotes from a comma separated list of emote sets"
+        }
+      ]
+    },
+    {
+      "name": "getUserFollowedChannels",
+      "description": "Get a user's list of followed channels",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User to retrieve follows for"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600"
+        },
+        {
+          "name": "sortby",
+          "type": "String",
+          "info": "Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`"
+        },
+        {
+          "name": "direction",
+          "type": "String",
+          "info": "Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`"
+        }
+      ]
+    },
+    {
+      "name": "checkFollowing",
+      "description": "Get status of follow relationship between user and target channel",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User to check following on `target`"
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "info": "Required: Channel to check following for"
+        }
+      ]
+    },
+    {
+      "name": "followChannel",
+      "description": "Follow a channel. Authenticated, required scope: user_follows_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: Authenticated user's name"
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "info": "Required: The name of the channel to be followed"
+        },
+        {
+          "name": "notifications",
+          "type": "Boolean",
+          "info": "Whether :user should receive email/push notifications (depending on their notification settings) when :target goes live. Default is false"
+        }
+      ]
+    },
+    {
+      "name": "unfollowChannel",
+      "description": "Unfollow a channel. Authenticated, required scope: user_follows_edit",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: Authenticated user's name"
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "info": "Required: The name of the channel to be unfollowed"
+        }
+      ]
+    },
+    {
+      "name": "getUserFollowingStreams",
+      "description": "Get a list of streams user is following. Authenticated, required scope: user_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "streamType",
+          "type": "String",
+          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`"
+        }
+      ]
+    },
+    {
+      "name": "getGamesByViewers",
+      "description": "Returns a list of games objects sorted by number of current viewers on Twitch, most popular first",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "getIngests",
+      "description": "Get list of ingests",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "OAuth Access Token"
+        }
+      ]
+    },
+    {
+      "name": "getInformation",
+      "description": "Get top level links object and authorization status",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "OAuth Access Token"
+        }
+      ]
+    },
+    {
+      "name": "findChannels",
+      "description": "Returns a list of channel objects matching the search query",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "query",
+          "type": "String",
+          "info": "Required: A search query"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "findStreams",
+      "description": "Returns a list of stream objects matching the search query",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "query",
+          "type": "String",
+          "info": "Required: A search query"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "hls",
+          "type": "Boolean",
+          "info": "If set to `true`, only returns streams using HLS. If set to `false`, only returns streams that are non-HLS"
+        }
+      ]
+    },
+    {
+      "name": "findGames",
+      "description": "Returns a list of game objects matching the search query",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "query",
+          "type": "String",
+          "info": "Required: A url-encoded search query"
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Suggests a list of games similar to query, e.g. 'star' query might suggest 'StarCraft II: Wings of Liberty'"
+        },
+        {
+          "name": "live",
+          "type": "Boolean",
+          "info": "If true, only returns games that are live on at least one channel"
+        }
+      ]
+    },
+    {
+      "name": "getSingleStream",
+      "description": "Returns a stream object if live",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel name"
+        }
+      ]
+    },
+    {
+      "name": "getStreams",
+      "description": "List streams",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "game",
+          "type": "String",
+          "info": "Streams categorized under game"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Streams from a comma separated list of channels"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "streamType",
+          "type": "String",
+          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`"
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "Only shows streams of a certain language. Permitted values are locale ID strings, e.g. `en`, `fi`, `es-mx`"
+        }
+      ]
+    },
+    {
+      "name": "getFeaturedStreams",
+      "description": "Get a list of featured streams",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "getStreamsSummary",
+      "description": "Get a summary of streams",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "game",
+          "type": "String",
+          "info": "Only show stats for the set game"
+        }
+      ]
+    },
+    {
+      "name": "getChannelSubscriptions",
+      "description": "Get list of users subscribed to channel. Authenticated, required scope: channel_subscriptions",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to list subscriptions for"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "direction",
+          "type": "String",
+          "info": "Creation date sorting direction. Default is asc. Valid values are asc and desc"
+        }
+      ]
+    },
+    {
+      "name": "checkUserSubscribed",
+      "description": "Check if channel has user subscribed. Authenticated, required scope: channel_check_subscription",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel to check subscription"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User to check subscription"
+        }
+      ]
+    },
+    {
+      "name": "getUserSubscribedChannels",
+      "description": "Check if user subscribes to channel. Authenticated, required scope: user_subscriptions",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User Name"
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "info": "Required: Channel Name"
+        }
+      ]
+    },
+    {
+      "name": "getTeams",
+      "description": "Get list of active team objects",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "Object offset for pagination. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTeam",
+      "description": "Get team object",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "team",
+          "type": "String",
+          "info": "Required: Team name to retrieve"
+        }
+      ]
+    },
+    {
+      "name": "getUser",
+      "description": "Returns a user object",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User name to retrieve"
+        }
+      ]
+    },
+    {
+      "name": "getSelf",
+      "description": "Returns a authenticated user. Authenticated, required scope: user_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        }
+      ]
+    },
+    {
+      "name": "getUserEmotes",
+      "description": "Get list of user's emotes. Authenticated, required scope: user_subscriptions",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "user",
+          "type": "String",
+          "info": "Required: User name"
+        }
+      ]
+    },
+    {
+      "name": "getUserFollowingChannelsVideos",
+      "description": "Get list of videos belonging to channels user is following. Authenticated, required scope: user_read",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: OAuth Access Token"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "broadcastType",
+          "type": "String",
+          "info": "Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`"
+        }
+      ]
+    },
+    {
+      "name": "getVideo",
+      "description": "Get video object",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "Required: Video id to retrieve"
+        }
+      ]
+    },
+    {
+      "name": "getTopVideos",
+      "description": "Get top videos by number of views",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Application client id"
+        },
+        {
+          "name": "limit",
+          "type": "String",
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+        },
+        {
+          "name": "offset",
+          "type": "String",
+          "info": "Object offset for pagination. Default is 0"
+        },
+        {
+          "name": "game",
+          "type": "String",
+          "info": "Returns only videos from game"
+        },
+        {
+          "name": "period",
+          "type": "String",
+          "info": "Returns only videos created in time period. Valid values are week, month, or all. Default is week"
+        }
+      ]
+    }
+  ]
+}

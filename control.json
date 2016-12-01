@@ -1,0 +1,480 @@
+{
+    "getAccessToken": {
+        "url": "/oauth2/token",
+        "method": "POST",
+        "args": {
+            "credentials|clientId": "$client_id",
+            "credentials|clientSecret": "$client_secret",
+            "String|code": "$code",
+            "String|redirectUri": "$redirect_uri",
+            "String|state": "state"
+        }
+    },
+    "getBlocklist": {
+        "url": "/users/:user/blocks",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$user",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "addToBlockList": {
+        "url": "/users/:user/blocks/:target",
+        "method": "PUT",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user",
+            "String|target": "!target"
+        }
+    },
+    "deletFromBlockList": {
+        "url": "/users/:user/blocks/:target",
+        "method": "DELETE",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user",
+            "String|target": "!target"
+        }
+    },
+    "getChannel": {
+        "url": "/channels/:channel",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|channel": "$!channel"
+        }
+    },
+    "getUsersChannel": {
+        "url": "/channel",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken"
+        }
+    },
+    "getChannelVideos": {
+        "url": "/channels/:channel/videos",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|channel": "$!channel",
+            "Number|limit": "limit",
+            "Number|offset": "offset",
+            "Boolean|broadcasts": "broadcasts",
+            "Boolean|hls": "hls"
+        }
+    },
+    "getChannelFollowingUsers": {
+        "url": "/channels/:channel/follows",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|channel": "$!channel",
+            "Number|limit": "limit",
+            "Number|offset": "offset",
+            "String|cursor": "cursor",
+            "String|direction": "direction"
+        }
+    },
+    "getChannelEditors": {
+        "url": "/channels/:channel/editors",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel"
+        }
+    },
+    "updateChannel": {
+        "url": "/channels/:channel",
+        "method": "PUT",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|status": "channel.status",
+            "String|game": "channel.game",
+            "String|delay": "channel.delay",
+            "Boolean|channelFeedEnabled": "channel.channel_feed_enabled"
+        },
+        "tree": true
+    },
+    "resetChannelStreamKey": {
+        "url": "/channels/:channel/stream_key",
+        "method": "DELETE",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel"
+        }
+    },
+    "startCommercialOnChannel": {
+        "url": "/channels/:channel/commercial",
+        "method": "POST",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|length": "length"
+        }
+    },
+    "getChannelTeams": {
+        "url": "/channels/:channel/teams",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel"
+        }
+    },
+    "getChannelFeedPosts": {
+        "url": "/feed/:channel/posts",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "Number|limit": "limit",
+            "String|cursor": "cursor"
+        }
+    },
+    "createPost": {
+        "url": "/feed/:channel/posts",
+        "method": "POST",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|content": "$content",
+            "Boolean|share": "share"
+        }
+    },
+    "getPost": {
+        "url": "/feed/:channel/posts/:id",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|id": "$!id"
+        }
+    },
+    "deletePost": {
+        "url": "/feed/:channel/posts/:id",
+        "method": "DELETE",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|id": "$!id"
+        }
+    },
+    "createReactionToPost": {
+        "url": "/feed/:channel/posts/:id/reactions?emote_id=:emoteId",
+        "method": "POST",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|id": "$!id",
+            "String|emoteId": "$!emoteId"
+        }
+    },
+    "deleteReaction": {
+        "url": "/feed/:channel/posts/:id/reactions?emote_id=:emoteId",
+        "method": "DELETE",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|id": "$!id",
+            "String|emoteId": "$emoteId"
+        }
+    },
+    "getChatLinks": {
+        "url": "/chat/:channel",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$clientId"
+        }
+    },
+    "getChannelChatBadges": {
+        "url": "/chat/:channel/badges",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|channel": "$!channel"
+        }
+    },
+    "getAllEmoticon": {
+        "url": "/chat/emoticons",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$clientId"
+        }
+    },
+    "getEmoticons": {
+        "url": "/chat/emoticon_images",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|emotesets": "emotesets"
+        }
+    },
+    "getUserFollowedChannels": {
+        "url": "/users/:user/follows/channels",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|user": "$!user",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|sortby": "sortby",
+            "String|direction": "direction"
+        }
+    },
+    "checkFollowing": {
+        "url": "/users/:user/follows/channels/:target",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|user": "$!user",
+            "String|target": "$!target"
+        }
+    },
+    "followChannel": {
+        "url": "/users/:user/follows/channels/:target",
+        "method": "PUT",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user",
+            "String|target": "$!target",
+            "Boolean|notifications": "notifications"
+        }
+    },
+    "unfollowChannel": {
+        "url": "/users/:user/follows/channels/:target",
+        "method": "DELETE",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user",
+            "String|target": "$!target"
+        }
+    },
+    "getUserFollowingStreams": {
+        "url": "/ /streams/followed",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "Number|limit": "limit",
+            "Number|offset": "offset",
+            "String|streamType": "stream_type"
+        }
+    },
+    "getGamesByViewers": {
+        "url": "/games/top",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|limit": "limit",
+            "String|offset": "offset"
+        }
+    },
+    "getIngests": {
+        "url": "/ingests",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "accessToken"
+        }
+    },
+    "getInformation": {
+        "url": "/",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "accessToken"
+        }
+    },
+    "findChannels": {
+        "url": "/search/channels",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|query": "$query",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "findStreams": {
+        "url": "/search/streams",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|query": "$query",
+            "Number|limit": "limit",
+            "Number|offset": "offset",
+            "Boolean|hls": "hls"
+        }
+    },
+    "findGames": {
+        "url": "/search/games",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|query": "$query",
+            "String|type": "type",
+            "Boolean|live": "live"
+        }
+    },
+    "getSingleStream": {
+        "url": "/streams/:channel/",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|channel": "$!channel"
+        }
+    },
+    "getStreams": {
+        "url": "/streams",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|game": "game",
+            "String|channel": "channel",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|streamType": "stream_type",
+            "String|language": "language"
+        }
+    },
+    "getFeaturedStreams": {
+        "url": "/streams/featured",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|limit": "limit",
+            "String|offset": "offset"
+        }
+    },
+    "getStreamsSummary": {
+        "url": "/streams/summary",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|game": "game"
+        }
+    },
+    "getChannelSubscriptions": {
+        "url": "/channels/:channel/subscriptions",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|direction": "direction"
+        }
+    },
+    "checkUserSubscribed": {
+        "url": "/channels/:channel/subscriptions/:user",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|channel": "$!channel",
+            "String|user": "$!user"
+        }
+    },
+    "getUserSubscribedChannels": {
+        "url": "/users/:user/subscriptions/:channel",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user",
+            "String|channel": "$!channel"
+        }
+    },
+    "getTeams": {
+        "url": "/teams",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getSingleTeam": {
+        "url": "/teams/:team",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|team": "$!team"
+        }
+    },
+    "getUser": {
+        "url": "/users/:user",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|user": "$!user"
+        }
+    },
+    "getSelf": {
+        "url": "/user",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken"
+        }
+    },
+    "getUserEmotes": {
+        "url": "/users/:user/emotes",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|user": "$!user"
+        }
+    },
+    "getUserFollowingChannelsVideos": {
+        "url": "/videos/followed",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|accessToken": "$!accessToken",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|broadcastType": "broadcast_type"
+        }
+    },
+    "getVideo": {
+        "url": "/videos/:id",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|id": "$!id"
+        }
+    },
+    "getTopVideos": {
+        "url": "/videos/top",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|game": "game",
+            "String|period": "period"
+        }
+    }
+}
