@@ -111,7 +111,7 @@
       ]
     },
     {
-      "name": "deletFromBlockList",
+      "name": "deleteFromBlockList",
       "description": "Delete target from user's block list. Authenticated, required scope: user_blocks_edit",
       "args": [
         {
@@ -423,6 +423,7 @@
         {
           "name": "content",
           "type": "String",
+          "test": "Runscope post",
           "info": "Required: Content of the post"
         },
         {
@@ -453,6 +454,7 @@
         },
         {
           "name": "id",
+          "test": "{{post_id}}",
           "type": "String",
           "info": "Required: Post id to retrieve"
         }
@@ -479,6 +481,7 @@
         },
         {
           "name": "id",
+          "test": "{{post_id}}",
           "type": "String",
           "info": "Required: Post id to delete"
         }
@@ -506,6 +509,7 @@
         {
           "name": "id",
           "type": "String",
+          "test": "{{post_id}}",
           "info": "Required: Post id to add reaction for"
         },
         {
@@ -537,6 +541,7 @@
         {
           "name": "id",
           "type": "String",
+          "test": "{{post_id}}",
           "info": "Required: Post id to delete reaction for"
         },
         {
@@ -835,6 +840,7 @@
         },
         {
           "name": "query",
+          "test": "CS",
           "type": "String",
           "info": "Required: A search query"
         },
@@ -866,6 +872,7 @@
         },
         {
           "name": "query",
+          "test": "CS",
           "type": "String",
           "info": "Required: A url-encoded search query"
         },
@@ -970,6 +977,7 @@
         },
         {
           "name": "game",
+          "test": "Dota 2",
           "type": "String",
           "info": "Only show stats for the set game"
         }
@@ -1196,6 +1204,7 @@
         {
           "name": "id",
           "type": "String",
+          "test": "v104157498",
           "info": "Required: Video id to retrieve"
         }
       ]
