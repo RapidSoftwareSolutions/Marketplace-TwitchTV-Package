@@ -200,7 +200,8 @@
         "url": "/chat/:channel",
         "method": "GET",
         "args": {
-            "credentials|clientId": "$clientId"
+            "credentials|clientId": "$clientId",
+            "String|channel": "$channel"
         }
     },
     "getChannelChatBadges": {
@@ -269,7 +270,7 @@
         }
     },
     "getUserFollowingStreams": {
-        "url": "/ /streams/followed",
+        "url": "/streams/followed",
         "method": "GET",
         "args": {
             "credentials|clientId": "$!clientId",

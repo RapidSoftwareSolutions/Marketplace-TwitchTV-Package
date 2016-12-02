@@ -618,7 +618,7 @@
   }, {
     "name": "getUserFollowingStreams",
     "method": "GET",
-    "url": " /streams/followed",
+    "url": "/streams/followed",
     "description": "Get a list of streams user is following. Authenticated, required scope: user_read",
     "args": [{
 		  "name": "clientId",
