@@ -253,6 +253,7 @@ Returns a links object to all other chat endpoints
 | Field   | Type       | Description
 |---------|------------|----------
 | clientId| credentials| Required: Application client id
+| channel | String     | Required: Channel to retrive chant links for
 
 ## TwitchTV.getChannelChatBadges
 Get chat badges for channel

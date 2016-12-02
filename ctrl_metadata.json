@@ -476,7 +476,11 @@
 		  "name": "clientId",
 		  "type": "credentials",
 		  "info": "Required: Application client id"
-		}]
+		}, {
+      "name": "channel",
+      "type": "String",
+      "info": "Required: Channel to retrive chat links for"
+    }]
   }, {
     "name": "getChannelChatBadges",
     "method": "GET",
