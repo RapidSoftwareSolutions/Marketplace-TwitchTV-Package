@@ -72,7 +72,7 @@ for(let func in control) {
 
             response              = yield api.request(options);
             r.callback            = 'success';
-            r.contextWrites['to'] = response == '' ? {'message': 'Operations successfuly'} : response;
+            r.contextWrites['to'] = response == '' ? {'message': 'Success'} : response;
         } catch(e) {
             r.callback            = 'error';
             r.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
