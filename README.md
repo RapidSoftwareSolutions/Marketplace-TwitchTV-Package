@@ -69,7 +69,7 @@ Authenticated, required scope: `user_blocks_edit`
 | clientId   | credentials| Required: Application client id
 | accessToken| String     | Required: OAuth Access Token
 | user       | String     | Required: The authenticated user
-| target     | String     | User to be blocked
+| target     | String     | Required: User to be blocked
 
 ## TwitchTV.deleteFromBlockList
 Delete target from user's block list. 
@@ -80,7 +80,7 @@ Authenticated, required scope: `user_blocks_edit`
 | clientId   | credentials| Required: Application client id
 | accessToken| String     | Required: OAuth Access Token
 | user       | String     | Required: The authenticated user
-| target     | String     | User to be unblocked
+| target     | String     | Required: User to be unblocked
 
 ## TwitchTV.getChannel
 Get channel object

@@ -106,7 +106,7 @@
         {
           "name": "target",
           "type": "String",
-          "info": "User to be blocked"
+          "info": "Required: User to be blocked"
         }
       ]
     },
@@ -132,7 +132,7 @@
         {
           "name": "target",
           "type": "String",
-          "info": "User to be unblocked"
+          "info": "Required: User to be unblocked"
         }
       ]
     },

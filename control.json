@@ -28,7 +28,7 @@
             "credentials|clientId": "$!clientId",
             "String|accessToken": "$!accessToken",
             "String|user": "$!user",
-            "String|target": "!target"
+            "String|target": "$!target"
         }
     },
     "deleteFromBlockList": {
@@ -38,7 +38,7 @@
             "credentials|clientId": "$!clientId",
             "String|accessToken": "$!accessToken",
             "String|user": "$!user",
-            "String|target": "!target"
+            "String|target": "$!target"
         }
     },
     "getChannel": {
