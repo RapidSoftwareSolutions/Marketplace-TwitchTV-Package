@@ -2,6 +2,7 @@
   "package": "TwitchTV",
   "tagline": "TwitchTV API Package",
   "description": "The Twitch API enables you to develop your own applications using the rich feature set that we provide",
+  "keywords": ["API", "game", "gamer", "gaming", "live", "social", "stream", "video"],
   "image": "http://logo.clearbit.com/twitch.tv",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-TwitchTV-Package",
   "accounts": {
@@ -19,27 +20,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "clientSecret",
           "type": "credentials",
-          "info": "Required: Application client secret key"
+          "info": "Application client secret key",
+          "required": true
         },
         {
           "name": "code",
           "type": "String",
-          "info": "Required: The authorization code"
+          "info": "The authorization code",
+          "required": true
         },
         {
           "name": "redirectUri",
           "type": "String",
-          "info": "Required: Application redirect url"
+          "info": "Application redirect url",
+          "required": true
         },
         {
           "name": "state",
           "type": "String",
-          "info": "Your provided unique token"
+          "info": "Your provided unique token",
+          "required": false
         }
       ],
       "callbacks": [
@@ -60,27 +66,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: Valid username"
+          "info": "Valid username",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         }
       ]
     },
@@ -91,22 +102,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: The authenticated user"
+          "info": "The authenticated user",
+          "required": true
         },
         {
           "name": "target",
           "type": "String",
-          "info": "Required: User to be blocked"
+          "info": "User to be blocked",
+          "required": true
         }
       ]
     },
@@ -117,22 +132,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: The authenticated user"
+          "info": "The authenticated user",
+          "required": true
         },
         {
           "name": "target",
           "type": "String",
-          "info": "Required: User to be unblocked"
+          "info": "User to be unblocked",
+          "required": true
         }
       ]
     },
@@ -143,12 +162,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to retrieve"
+          "info": "Channel to retrieve",
+          "required": true
         }
       ]
     },
@@ -159,12 +180,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         }
       ]
     },
@@ -175,32 +198,38 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to video retrieve from"
+          "info": "Channel to video retrieve from",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "broadcasts",
           "type": "Boolean",
-          "info": "Returns only broadcasts when `true`. Otherwise only highlights are returned. Default is `false`"
+          "info": "Returns only broadcasts when `true`. Otherwise only highlights are returned. Default is `false`",
+          "required": false
         },
         {
           "name": "hls",
           "type": "Boolean",
-          "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`"
+          "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`",
+          "required": false
         }
       ]
     },
@@ -211,32 +240,38 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to follows retrieve for"
+          "info": "Channel to follows retrieve for",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600"
+          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600",
+          "required": false
         },
         {
           "name": "cursor",
           "type": "String",
-          "info": "Twitch uses cursoring to paginate long lists of followers. Check _cursor in response body and set cursor to this value to get the next page of results, or use _links.next to navigate to the next page of results"
+          "info": "Twitch uses cursoring to paginate long lists of followers. Check _cursor in response body and set cursor to this value to get the next page of results, or use _links.next to navigate to the next page of results",
+          "required": false
         },
         {
           "name": "direction",
           "type": "String",
-          "info": "Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`"
+          "info": "Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`",
+          "required": false
         }
       ]
     },
@@ -247,17 +282,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to retrieve editors for"
+          "info": "Channel to retrieve editors for",
+          "required": true
         }
       ]
     },
@@ -268,37 +306,44 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to update"
+          "info": "Channel to update",
+          "required": true
         },
         {
           "name": "status",
           "type": "String",
-          "info": "Channel's title"
+          "info": "Channel's title",
+          "required": false
         },
         {
           "name": "game",
           "type": "String",
-          "info": "Game category to be classified as"
+          "info": "Game category to be classified as",
+          "required": false
         },
         {
           "name": "delay",
           "type": "String",
-          "info": "Channel delay in seconds. Requires the channel owner's OAuth token"
+          "info": "Channel delay in seconds. Requires the channel owner's OAuth token",
+          "required": false
         },
         {
           "name": "channelFeedEnabled",
           "type": "Boolean",
-          "info": "Whether the channel's feed is enabled. Requires the channel owner's OAuth token"
+          "info": "Whether the channel's feed is enabled. Requires the channel owner's OAuth token",
+          "required": false
         }
       ]
     },
@@ -309,17 +354,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to reset stream key for"
+          "info": "Channel to reset stream key for",
+          "required": true
         }
       ]
     },
@@ -330,22 +378,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to start commercial for"
+          "info": "Channel to start commercial for",
+          "required": true
         },
         {
           "name": "length",
           "type": "String",
-          "info": "Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes"
+          "info": "Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes",
+          "required": false
         }
       ]
     },
@@ -356,17 +408,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to list teams for"
+          "info": "Channel to list teams for",
+          "required": true
         }
       ]
     },
@@ -377,27 +432,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to list posts from"
+          "info": "Channel to list posts from",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
+          "required": false
         },
         {
           "name": "cursor",
           "type": "String",
-          "info": "Cursor value to begin next page"
+          "info": "Cursor value to begin next page",
+          "required": false
         }
       ]
     },
@@ -408,27 +468,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to create feed post for"
+          "info": "Channel to create feed post for",
+          "required": true
         },
         {
           "name": "content",
           "type": "String",
-          "info": "Required: Content of the post"
+          "info": "Content of the post",
+          "required": true
         },
         {
           "name": "share",
           "type": "Boolean",
-          "info": "When set to true, shares the post, with a link to the post URL, on the channel's Twitter if it's connected"
+          "info": "When set to true, shares the post, with a link to the post URL, on the channel's Twitter if it's connected",
+          "required": false
         }
       ]
     },
@@ -439,22 +504,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to retrieve post from"
+          "info": "Channel to retrieve post from",
+          "required": true
         },
         {
           "name": "id",
           "type": "String",
-          "info": "Required: Post id to retrieve"
+          "info": "Post id to retrieve",
+          "required": true
         }
       ]
     },
@@ -465,22 +534,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to delete post from"
+          "info": "Channel to delete post from",
+          "required": true
         },
         {
           "name": "id",
           "type": "String",
-          "info": "Required: Post id to delete"
+          "info": "Post id to delete",
+          "required": true
         }
       ]
     },
@@ -491,27 +564,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to create post reaction for"
+          "info": "Channel to create post reaction for",
+          "required": true
         },
         {
           "name": "id",
           "type": "String",
-          "info": "Required: Post id to add reaction for"
+          "info": "Post id to add reaction for",
+          "required": true
         },
         {
           "name": "emoteId",
           "type": "String",
-          "info": "Required: Single emote id (ex: `25` => Kappa) or the string `endorse`"
+          "info": "Single emote id (ex: `25` => Kappa) or the string `endorse`",
+          "required": true
         }
       ]
     },
@@ -522,27 +600,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to delete post reaction for"
+          "info": "Channel to delete post reaction for",
+          "required": true
         },
         {
           "name": "id",
           "type": "String",
-          "info": "Required: Post id to delete reaction for"
+          "info": "Post id to delete reaction for",
+          "required": true
         },
         {
           "name": "emoteId",
           "type": "String",
-          "info": "Required: Single emote id (ex: `25` => Kappa) or the string `endorse`"
+          "info": "Single emote id (ex: `25` => Kappa) or the string `endorse`",
+          "required": true
         }
       ]
     },
@@ -553,12 +636,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to retrieve chant links for"
+          "info": "Channel to retrieve chant links for",
+          "required": true
         }
       ]
     },
@@ -569,12 +654,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to list badges for"
+          "info": "Channel to list badges for",
+          "required": true
         }
       ]
     },
@@ -585,7 +672,8 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         }
       ]
     },
@@ -596,12 +684,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "emotesets",
           "type": "String",
-          "info": "Emotes from a comma separated list of emote sets"
+          "info": "Emotes from a comma separated list of emote sets",
+          "required": false
         }
       ]
     },
@@ -612,32 +702,38 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User to retrieve follows for"
+          "info": "User to retrieve follows for",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600"
+          "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600",
+          "required": false
         },
         {
           "name": "sortby",
           "type": "String",
-          "info": "Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`"
+          "info": "Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`",
+          "required": false
         },
         {
           "name": "direction",
           "type": "String",
-          "info": "Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`"
+          "info": "Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`",
+          "required": false
         }
       ]
     },
@@ -648,17 +744,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User to check following on `target`"
+          "info": "User to check following on `target`",
+          "required": true
         },
         {
           "name": "target",
           "type": "String",
-          "info": "Required: Channel to check following for"
+          "info": "Channel to check following for",
+          "required": true
         }
       ]
     },
@@ -669,27 +768,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: Authenticated user's name"
+          "info": "Authenticated user's name",
+          "required": true
         },
         {
           "name": "target",
           "type": "String",
-          "info": "Required: The name of the channel to be followed"
+          "info": "The name of the channel to be followed",
+          "required": true
         },
         {
           "name": "notifications",
           "type": "Boolean",
-          "info": "Whether :user should receive email/push notifications (depending on their notification settings) when :target goes live. Default is false"
+          "info": "Whether :user should receive email/push notifications (depending on their notification settings) when :target goes live. Default is false",
+          "required": false
         }
       ]
     },
@@ -700,22 +804,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: Authenticated user's name"
+          "info": "Authenticated user's name",
+          "required": true
         },
         {
           "name": "target",
           "type": "String",
-          "info": "Required: The name of the channel to be unfollowed"
+          "info": "The name of the channel to be unfollowed",
+          "required": true
         }
       ]
     },
@@ -726,27 +834,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "streamType",
           "type": "String",
-          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`"
+          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`",
+          "required": false
         }
       ]
     },
@@ -757,17 +870,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         }
       ]
     },
@@ -778,12 +894,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": false
         }
       ]
     },
@@ -794,12 +912,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": false
         }
       ]
     },
@@ -810,22 +930,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "query",
           "type": "String",
-          "info": "Required: A search query"
+          "info": "A search query",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         }
       ]
     },
@@ -836,27 +960,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "query",
           "type": "String",
-          "info": "Required: A search query"
+          "info": "A search query",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "hls",
           "type": "Boolean",
-          "info": "If set to `true`, only returns streams using HLS. If set to `false`, only returns streams that are non-HLS"
+          "info": "If set to `true`, only returns streams using HLS. If set to `false`, only returns streams that are non-HLS",
+          "required": false
         }
       ]
     },
@@ -867,22 +996,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "query",
           "type": "String",
-          "info": "Required: A url-encoded search query"
+          "info": "A url-encoded search query",
+          "required": true
         },
         {
           "name": "type",
           "type": "String",
-          "info": "Suggests a list of games similar to query, e.g. 'star' query might suggest 'StarCraft II: Wings of Liberty'"
+          "info": "Suggests a list of games similar to query, e.g. 'star' query might suggest 'StarCraft II: Wings of Liberty'",
+          "required": false
         },
         {
           "name": "live",
           "type": "Boolean",
-          "info": "If true, only returns games that are live on at least one channel"
+          "info": "If true, only returns games that are live on at least one channel",
+          "required": false
         }
       ]
     },
@@ -893,12 +1026,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel name"
+          "info": "Channel name",
+          "required": true
         }
       ]
     },
@@ -909,37 +1044,44 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "game",
           "type": "String",
-          "info": "Streams categorized under game"
+          "info": "Streams categorized under game",
+          "required": false
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Streams from a comma separated list of channels"
+          "info": "Streams from a comma separated list of channels",
+          "required": false
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "streamType",
           "type": "String",
-          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`"
+          "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`",
+          "required": false
         },
         {
           "name": "language",
           "type": "String",
-          "info": "Only shows streams of a certain language. Permitted values are locale ID strings, e.g. `en`, `fi`, `es-mx`"
+          "info": "Only shows streams of a certain language. Permitted values are locale ID strings, e.g. `en`, `fi`, `es-mx`",
+          "required": false
         }
       ]
     },
@@ -950,17 +1092,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         }
       ]
     },
@@ -971,12 +1116,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "game",
           "type": "String",
-          "info": "Only show stats for the set game"
+          "info": "Only show stats for the set game",
+          "required": false
         }
       ]
     },
@@ -987,32 +1134,38 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to list subscriptions for"
+          "info": "Channel to list subscriptions for",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "direction",
           "type": "String",
-          "info": "Creation date sorting direction. Default is asc. Valid values are asc and desc"
+          "info": "Creation date sorting direction. Default is asc. Valid values are asc and desc",
+          "required": false
         }
       ]
     },
@@ -1023,22 +1176,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel to check subscription"
+          "info": "Channel to check subscription",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User to check subscription"
+          "info": "User to check subscription",
+          "required": true
         }
       ]
     },
@@ -1049,22 +1206,26 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User Name"
+          "info": "User Name",
+          "required": true
         },
         {
           "name": "channel",
           "type": "String",
-          "info": "Required: Channel Name"
+          "info": "Channel Name",
+          "required": true
         }
       ]
     },
@@ -1075,17 +1236,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "limit",
           "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "Number",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         }
       ]
     },
@@ -1096,12 +1260,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "team",
           "type": "String",
-          "info": "Required: Team name to retrieve"
+          "info": "Team name to retrieve",
+          "required": true
         }
       ]
     },
@@ -1112,12 +1278,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User name to retrieve"
+          "info": "User name to retrieve",
+          "required": true
         }
       ]
     },
@@ -1128,12 +1296,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         }
       ]
     },
@@ -1144,17 +1314,20 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "user",
           "type": "String",
-          "info": "Required: User name"
+          "info": "User name",
+          "required": true
         }
       ]
     },
@@ -1165,27 +1338,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "accessToken",
           "type": "String",
-          "info": "Required: OAuth Access Token"
+          "info": "OAuth Access Token",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "broadcastType",
           "type": "String",
-          "info": "Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`"
+          "info": "Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`",
+          "required": false
         }
       ]
     },
@@ -1196,12 +1374,14 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "id",
           "type": "String",
-          "info": "Required: Video id to retrieve"
+          "info": "Video id to retrieve",
+          "required": true
         }
       ]
     },
@@ -1212,27 +1392,32 @@
         {
           "name": "clientId",
           "type": "credentials",
-          "info": "Required: Application client id"
+          "info": "Application client id",
+          "required": true
         },
         {
           "name": "limit",
           "type": "String",
-          "info": "Maximum number of objects in array. Default is 10. Maximum is 100"
+          "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
+          "required": false
         },
         {
           "name": "offset",
           "type": "String",
-          "info": "Object offset for pagination. Default is 0"
+          "info": "Object offset for pagination. Default is 0",
+          "required": false
         },
         {
           "name": "game",
           "type": "String",
-          "info": "Returns only videos from game"
+          "info": "Returns only videos from game",
+          "required": false
         },
         {
           "name": "period",
           "type": "String",
-          "info": "Returns only videos created in time period. Valid values are week, month, or all. Default is week"
+          "info": "Returns only videos created in time period. Valid values are week, month, or all. Default is week",
+          "required": false
         }
       ]
     }
