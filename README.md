@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/TwitchTV/functions?utm_source=RapidAPIGitHub_TwitchTVFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # TwitchTV Package
 The Twitch API enables you to develop your own applications using the rich feature set that we provide
 * Domain: twitch.tv
