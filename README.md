@@ -18,6 +18,8 @@ When authenticating on behalf of a user, you'll be granted an **access token** t
 2. If the user accepts, they will be redirected back to https://[your registered redirect URI]/?code=[CODE]
 3. Use getAccessToken method to get users's `accessToken`.
 
+You can also generate an access token using this [OAuth Generator](https://rapidoauth.com/twitch)
+
 ### Scopes
 
 Example: ...&redirect_uri=[`redirectUri`]&scope=`user_read+user_blocks_edit+channel_stream+channel_feed_edit`
