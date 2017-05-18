@@ -73,7 +73,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -109,7 +110,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -139,7 +141,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -187,7 +190,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         }
       ]
     },
@@ -289,7 +293,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -313,7 +318,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -361,7 +367,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -385,7 +392,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -415,7 +423,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -439,7 +448,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -475,7 +485,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -511,7 +522,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -541,7 +553,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -571,7 +584,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -607,7 +621,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -775,7 +790,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -811,7 +827,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -841,7 +858,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "limit",
@@ -901,7 +919,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": false
+          "required": false,
+          "generator":"https://rapidoauth.com/twitch"
         }
       ]
     },
@@ -919,7 +938,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": false
+          "required": false,
+          "generator":"https://rapidoauth.com/twitch"
         }
       ]
     },
@@ -1141,7 +1161,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -1183,7 +1204,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "channel",
@@ -1213,7 +1235,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -1303,7 +1326,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         }
       ]
     },
@@ -1321,7 +1345,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "user",
@@ -1345,7 +1370,8 @@
           "name": "accessToken",
           "type": "String",
           "info": "OAuth Access Token",
-          "required": true
+          "required": true,
+          "generator":"https://rapidoauth.com/twitch"
         },
         {
           "name": "limit",
