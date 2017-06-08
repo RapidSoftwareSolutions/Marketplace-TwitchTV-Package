@@ -273,7 +273,8 @@
         },
         {
           "name": "direction",
-          "type": "String",
+          "type": "Select",
+          "options": ["asc", "desc"],
           "info": "Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`",
           "required": false
         }
@@ -403,7 +404,8 @@
         },
         {
           "name": "length",
-          "type": "String",
+          "type": "Select",
+          "options": ["30", "60", "90", "120", "150", "180"],
           "info": "Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes",
           "required": false
         }
@@ -740,13 +742,15 @@
         },
         {
           "name": "sortby",
-          "type": "String",
+          "type": "Select",
+          "options": ["created_at", "last_broadcast", "login"],
           "info": "Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`",
           "required": false
         },
         {
           "name": "direction",
-          "type": "String",
+          "type": "Select",
+          "options": ["asc", "desc"],
           "info": "Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`",
           "required": false
         }
@@ -875,7 +879,8 @@
         },
         {
           "name": "streamType",
-          "type": "String",
+          "type": "Select",
+          "options": ["all", "playlist", "live"],
           "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`",
           "required": false
         }
@@ -1093,7 +1098,8 @@
         },
         {
           "name": "streamType",
-          "type": "String",
+          "type": "Select",
+          "options": ["all", "playlist", "live"],
           "info": "Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`",
           "required": false
         },
@@ -1184,7 +1190,8 @@
         },
         {
           "name": "direction",
-          "type": "String",
+          "type": "Select",
+          "options": ["asc", "desc"],
           "info": "Creation date sorting direction. Default is asc. Valid values are asc and desc",
           "required": false
         }
@@ -1387,7 +1394,8 @@
         },
         {
           "name": "broadcastType",
-          "type": "String",
+          "type": "Select",
+          "options": ["all", "archive", "highlight"],
           "info": "Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`",
           "required": false
         }
@@ -1441,7 +1449,8 @@
         },
         {
           "name": "period",
-          "type": "String",
+          "type": "Select",
+          "options": ["week", "month", "all"],
           "info": "Returns only videos created in time period. Valid values are week, month, or all. Default is week",
           "required": false
         }

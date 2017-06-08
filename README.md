@@ -5,7 +5,7 @@ The Twitch API enables you to develop your own applications using the rich featu
 * Domain: twitch.tv
 * Credentials: clientId, clientSecret
 
-## How to get credentials: 
+## How to get credentials:
 To make an application that uses the Twitch API, you will first need to "Register your application" from the [connections tab](https://www.twitch.tv/settings/connections) of your Twitch settings page. When creating this app, you'll need to enter in your **redirect URI**, which is where users are redirected after having authorized your application.
 
 Once you create a Developer Application, you are assigned a **client id**. Some authentication flows also require a **client secret**. You can generate one on the same page as the client ID. Client IDs are public and can be shared (e.g. embedded in the source of a web page), but client secrets are equivalent to a password for your application and must be kept confidential.
@@ -41,6 +41,16 @@ Example: ...&redirect_uri=[`redirectUri`]&scope=`user_read+user_blocks_edit+chan
 
 Read more about Twitch Authentication: https://github.com/justintv/Twitch-API/blob/master/authentication.md
 
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
+
 ## TwitchTV.getAccessToken
 Getting access tokens
 
@@ -53,7 +63,7 @@ Getting access tokens
 | state       | String     | Your provided unique token
 
 ## TwitchTV.getBlocklist
-Get user's block list. 
+Get user's block list.
 Authenticated, required scope: `user_blocks_read`
 
 | Field      | Type       | Description
@@ -65,7 +75,7 @@ Authenticated, required scope: `user_blocks_read`
 | offset     | Number     | Object offset for pagination. Default is 0
 
 ## TwitchTV.addToBlockList
-Add target to user's block list. 
+Add target to user's block list.
 Authenticated, required scope: `user_blocks_edit`
 
 | Field      | Type       | Description
@@ -76,7 +86,7 @@ Authenticated, required scope: `user_blocks_edit`
 | target     | String     | Required: User to be blocked
 
 ## TwitchTV.deleteFromBlockList
-Delete target from user's block list. 
+Delete target from user's block list.
 Authenticated, required scope: `user_blocks_edit`
 
 | Field      | Type       | Description
@@ -95,7 +105,7 @@ Get channel object
 | channel | String     | Required: Channel to retrieve
 
 ## TwitchTV.getUsersChannel
-Returns a channel object of authenticated user. 
+Returns a channel object of authenticated user.
 Authenticated, required scope: `channel_read`
 
 | Field      | Type       | Description
@@ -125,10 +135,10 @@ Get channel's list of following users
 | limit    | Number     | Maximum number of objects in array. Default is 25. Maximum is 100
 | offset   | Number     | (deprecated) Object offset for pagination. Default is 0. Maximum is 1600
 | cursor   | String     | Twitch uses cursoring to paginate long lists of followers. Check _cursor in response body and set cursor to this value to get the next page of results, or use _links.next to navigate to the next page of results
-| direction| String     | Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`
+| direction| Select     | Creation date sorting direction. Default is `desc`. Valid values are asc and `desc`
 
 ## TwitchTV.getChannelEditors
-Get channel's list of editors. 
+Get channel's list of editors.
 Authenticated, required scope: `channel_read`
 
 | Field      | Type       | Description
@@ -138,7 +148,7 @@ Authenticated, required scope: `channel_read`
 | channel    | String     | Required: Channel to retrieve editors for
 
 ## TwitchTV.updateChannel
-Update channel object. 
+Update channel object.
 Authenticated, required scope: `channel_editor`
 
 | Field             | Type       | Description
@@ -152,7 +162,7 @@ Authenticated, required scope: `channel_editor`
 | channelFeedEnabled| Boolean    | Whether the channel's feed is enabled. Requires the channel owner's OAuth token
 
 ## TwitchTV.resetChannelStreamKey
-Reset channel's stream key. 
+Reset channel's stream key.
 Authenticated, required scope: `channel_stream`
 
 | Field      | Type       | Description
@@ -162,7 +172,7 @@ Authenticated, required scope: `channel_stream`
 | channel    | String     | Required: Channel to reset stream key for
 
 ## TwitchTV.startCommercialOnChannel
-Start a commercial on channel. 
+Start a commercial on channel.
 Authenticated, required scope: `channel_commercial`
 
 | Field      | Type       | Description
@@ -170,7 +180,7 @@ Authenticated, required scope: `channel_commercial`
 | clientId   | credentials| Required: Application client id
 | accessToken| String     | Required: OAuth Access Token
 | channel    | String     | Required: Channel to start commercial for
-| length     | String     | Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes
+| length     | Select     | Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes
 
 ## TwitchTV.getChannelTeams
 Get list of teams channel belongs to
@@ -182,7 +192,7 @@ Get list of teams channel belongs to
 | channel    | String     | Required: Channel to list teams for
 
 ## TwitchTV.getChannelFeedPosts
-Get channel feed posts. 
+Get channel feed posts.
 Authenticated, optional scope: channel_feed_read
 
 | Field      | Type       | Description
@@ -194,7 +204,7 @@ Authenticated, optional scope: channel_feed_read
 | cursor     | String     | Cursor value to begin next page
 
 ## TwitchTV.createPost
-Create post. 
+Create post.
 Authenticated, required scope: `channel_feed_edit`
 
 | Field      | Type       | Description
@@ -206,7 +216,7 @@ Authenticated, required scope: `channel_feed_edit`
 | share      | Boolean    | When set to true, shares the post, with a link to the post URL, on the channel's Twitter if it's connected
 
 ## TwitchTV.getPost
-Get channel feed posts. 
+Get channel feed posts.
 Authenticated, optional scope: channel_feed_read
 
 | Field      | Type       | Description
@@ -217,7 +227,7 @@ Authenticated, optional scope: channel_feed_read
 | id         | String     | Required: Post id to retrieve
 
 ## TwitchTV.deletePost
-Delete post. 
+Delete post.
 Authenticated, required scope: `channel_feed_edit`
 
 | Field      | Type       | Description
@@ -228,7 +238,7 @@ Authenticated, required scope: `channel_feed_edit`
 | id         | String     | Required: Post id to delete
 
 ## TwitchTV.createReactionToPost
-Create reaction to post. 
+Create reaction to post.
 Authenticated, required scope: `channel_feed_edit`
 
 | Field      | Type       | Description
@@ -240,7 +250,7 @@ Authenticated, required scope: `channel_feed_edit`
 | emoteId    | String     | Required: Single emote id (ex: `25` => Kappa) or the string `endorse`
 
 ## TwitchTV.deleteReaction
-Delete reaction. 
+Delete reaction.
 Authenticated, required scope: `channel_feed_edit`
 
 | Field      | Type       | Description
@@ -291,8 +301,8 @@ Get a user's list of followed channels
 | user     | String     | Required: User to retrieve follows for
 | limit    | String     | Maximum number of objects in array. Default is 25. Maximum is 100
 | offset   | String     | (deprecated) Object offset for pagination. Default is 0. Maximum is 1600
-| sortby   | String     | Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`
-| direction| String     | Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`
+| sortby   | Select     | Sort key. Default is `created_at`. Valid values are `created_at`, `last_broadcast`, and `login`
+| direction| Select     | Creation date sorting direction. Default is `desc`. Valid values are `asc` and `desc`
 
 ## TwitchTV.checkFollowing
 Get status of follow relationship between user and target channel
@@ -304,7 +314,7 @@ Get status of follow relationship between user and target channel
 | target  | String     | Required: Channel to check following for
 
 ## TwitchTV.followChannel
-Follow a channel. 
+Follow a channel.
 Authenticated, required scope: `user_follows_edit`
 
 | Field        | Type       | Description
@@ -316,7 +326,7 @@ Authenticated, required scope: `user_follows_edit`
 | notifications| Boolean    | Whether :user should receive email/push notifications (depending on their notification settings) when :target goes live. Default is false
 
 ## TwitchTV.unfollowChannel
-Unfollow a channel. 
+Unfollow a channel.
 Authenticated, required scope: `user_follows_edit`
 
 | Field      | Type       | Description
@@ -327,7 +337,7 @@ Authenticated, required scope: `user_follows_edit`
 | target     | String     | Required: The name of the channel to be unfollowed
 
 ## TwitchTV.getUserFollowingStreams
-Get a list of streams user is following. 
+Get a list of streams user is following.
 Authenticated, required scope: `user_read`
 
 | Field      | Type       | Description
@@ -336,7 +346,7 @@ Authenticated, required scope: `user_read`
 | accessToken| String     | Required: OAuth Access Token
 | limit      | Number     | Maximum number of objects in array. Default is 25. Maximum is 100
 | offset     | Number     | Object offset for pagination. Default is 0
-| streamType | String     | Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`
+| streamType | Select     | Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`
 
 ## TwitchTV.getGamesByViewers
 Returns a list of games objects sorted by number of current viewers on Twitch, most popular first
@@ -412,7 +422,7 @@ List streams
 | channel   | String     | Streams from a comma separated list of channels
 | limit     | String     | Maximum number of objects in array. Default is 25. Maximum is 100
 | offset    | String     | Object offset for pagination. Default is 0
-| streamType| String     | Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`
+| streamType| Select     | Only shows streams from a certain type. Permitted values: `all`, `playlist`, `live`
 | language  | String     | Only shows streams of a certain language. Permitted values are locale ID strings, e.g. `en`, `fi`, `es-mx`
 
 ## TwitchTV.getFeaturedStreams
@@ -433,7 +443,7 @@ Get a summary of streams
 | game    | String     | Only show stats for the set game
 
 ## TwitchTV.getChannelSubscriptions
-Get list of users subscribed to channel. 
+Get list of users subscribed to channel.
 Authenticated, required scope: `channel_subscriptions`
 
 | Field      | Type       | Description
@@ -443,10 +453,10 @@ Authenticated, required scope: `channel_subscriptions`
 | channel    | String     | Required: Channel to list subscriptions for
 | limit      | String     | Maximum number of objects in array. Default is 25. Maximum is 100
 | offset     | String     | Object offset for pagination. Default is 0
-| direction  | String     | Creation date sorting direction. Default is asc. Valid values are asc and desc
+| direction  | Select     | Creation date sorting direction. Default is asc. Valid values are asc and desc
 
 ## TwitchTV.checkUserSubscribed
-Check if channel has user subscribed. 
+Check if channel has user subscribed.
 Authenticated, required scope: `channel_check_subscription`
 
 | Field      | Type       | Description
@@ -457,7 +467,7 @@ Authenticated, required scope: `channel_check_subscription`
 | user       | String     | Required: User to check subscription
 
 ## TwitchTV.getUserSubscribedChannels
-Check if user subscribes to channel. 
+Check if user subscribes to channel.
 Authenticated, required scope: `user_subscriptions`
 
 | Field      | Type       | Description
@@ -493,7 +503,7 @@ Returns a user object
 | user    | String     | Required: User name to retrieve
 
 ## TwitchTV.getSelf
-Returns a authenticated user. 
+Returns a authenticated user.
 Authenticated, required scope: `user_read`
 
 | Field      | Type       | Description
@@ -502,7 +512,7 @@ Authenticated, required scope: `user_read`
 | accessToken| String     | Required: OAuth Access Token
 
 ## TwitchTV.getUserEmotes
-Get list of user's emotes. 
+Get list of user's emotes.
 Authenticated, required scope: `user_subscriptions`
 
 | Field      | Type       | Description
@@ -512,7 +522,7 @@ Authenticated, required scope: `user_subscriptions`
 | user       | String     | Required: User name
 
 ## TwitchTV.getUserFollowingChannelsVideos
-Get list of videos belonging to channels user is following. 
+Get list of videos belonging to channels user is following.
 Authenticated, required scope: `user_read`
 
 | Field        | Type       | Description
@@ -521,7 +531,7 @@ Authenticated, required scope: `user_read`
 | accessToken  | String     | Required: OAuth Access Token
 | limit        | String     | Maximum number of objects in array. Default is 10. Maximum is 100
 | offset       | String     | Object offset for pagination. Default is 0
-| broadcastType| String     | Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`
+| broadcastType| Select     | Only shows videos of a certain type. Supported values: `all`, `archive`, `highlight`. Default: `all`
 
 ## TwitchTV.getVideo
 Get video object
@@ -540,5 +550,4 @@ Get top videos by number of views
 | limit   | String     | Maximum number of objects in array. Default is 10. Maximum is 100
 | offset  | String     | Object offset for pagination. Default is 0
 | game    | String     | Returns only videos from game
-| period  | String     | Returns only videos created in time period. Valid values are week, month, or all. Default is week
-
+| period  | Select     | Returns only videos created in time period. Valid values are week, month, or all. Default is week
