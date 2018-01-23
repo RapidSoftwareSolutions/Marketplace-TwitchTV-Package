@@ -62,17 +62,6 @@ Getting access tokens
 | redirectUri | String     | Required: Application redirect url
 | state       | String     | Your provided unique token
 
-## TwitchTV.getBlocklist
-Get user's block list.
-Authenticated, required scope: `user_blocks_read`
-
-| Field      | Type       | Description
-|------------|------------|----------
-| clientId   | credentials| Required: Application client id
-| accessToken| String     | Required: OAuth Access Token
-| user       | String     | Required: Valid username
-| limit      | Number     | Maximum number of objects in array. Default is 25. Maximum is 100
-| offset     | Number     | Object offset for pagination. Default is 0
 
 ## TwitchTV.addToBlockList
 Add target to user's block list.

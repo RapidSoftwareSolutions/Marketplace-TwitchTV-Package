@@ -59,43 +59,7 @@
         }
       ]
     },
-    {
-      "name": "getBlocklist",
-      "description": "Get user's block list. Authenticated, required scope: user_blocks_read",
-      "args": [
-        {
-          "name": "clientId",
-          "type": "credentials",
-          "info": "Application client id",
-          "required": true
-        },
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "OAuth Access Token",
-          "required": true,
-          "generator":"https://rapidoauth.com/twitch"
-        },
-        {
-          "name": "user",
-          "type": "String",
-          "info": "Valid username",
-          "required": true
-        },
-        {
-          "name": "limit",
-          "type": "Number",
-          "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
-          "required": false
-        },
-        {
-          "name": "offset",
-          "type": "Number",
-          "info": "Object offset for pagination. Default is 0",
-          "required": false
-        }
-      ]
-    },
+
     {
       "name": "addToBlockList",
       "description": "Add target to user's block list. Authenticated, required scope: user_blocks_edit",
