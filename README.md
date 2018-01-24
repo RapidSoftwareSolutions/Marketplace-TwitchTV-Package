@@ -2,7 +2,7 @@
 
 # TwitchTV Package
 The Twitch API enables you to develop your own applications using the rich feature set that we provide
-* Domain: twitch.tv
+* Domain: [TwitchTv](http://twitch.tv)
 * Credentials: clientId, clientSecret
 
 ## How to get credentials:
@@ -39,7 +39,7 @@ Example: ...&redirect_uri=[`redirectUri`]&scope=`user_read+user_blocks_edit+chan
 + `channel_feed_read`: Ability to view to a channel feed.
 + `channel_feed_edit`: Ability to add posts and reactions to a channel feed.
 
-Read more about Twitch Authentication: https://github.com/justintv/Twitch-API/blob/master/authentication.md
+Read more about Twitch Authentication: https://dev.twitch.tv/docs/authentication
 
 ## Custom datatypes:
  |Datatype|Description|Example
