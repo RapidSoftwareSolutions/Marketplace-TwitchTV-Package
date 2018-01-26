@@ -16,7 +16,7 @@ const app           = express();
 app.use(bodyParser.json(({limit: '50mb'})));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.all(`/api/${PACKAGE_NAME}`, (req, res) => { res.send(metadata); });
-
+ 
 let mfile = fs.readFileSync('./metadata.json', 'utf-8'),
     cfile = fs.readFileSync('./control.json',  'utf-8');
 
@@ -51,17 +51,16 @@ for(let func in control) {
         try {
             let api = new API(API_ENDPOINT + url, {
                 headers: {
-                    'Accept':        'application/vnd.twitchtv.v3+json',
+                    'Accept':        'application/vnd.twitchtv.v5+json',
                     'Client-ID':     req.body.args['clientId'],
                     'Authorization': 'OAuth ' + req.body.args['accessToken']
                 }
             });
-
+  
             // todo: lib defaults
             if(func == 'getAccessToken') opts['grant_type|String'] = 'authorization_code';
-
             for(let arg in args) {
-                let argarr      = arg.split('|');
+                let argarr      = arg.split('|'); 
                 opts[args[arg] + '|' + argarr[0]] = req.body.args[argarr[1]];
             }
 
@@ -69,6 +68,25 @@ for(let func in control) {
             options.isRawBody = method == 'POST' || method == 'PUT';
             options.method    = method;
             options.hasTree   = !!tree;
+            console.log();
+            if(func == 'getEmoticons' && options.query['emotesets|String'])
+            {
+                if(typeof(options.query['emotesets|String']) == 'object')
+                {
+                    options.query['emotesets|String'] = options.query['emotesets|String'].join(',');
+                }
+            }
+
+            if(func == 'getChannelVideos' && options.query['broadcastType|String'])
+            {
+                    options.query['broadcastType|String'] = options.query['broadcastType|String'].join(',');
+            }
+
+            if(func == 'getChannelVideos' && options.query['language|String'])
+            {
+                    options.query['language|String'] = options.query['language|String'].join(',');
+            }
+
 
             response              = yield api.request(options);
             r.callback            = 'success';
@@ -77,7 +95,6 @@ for(let func in control) {
             r.callback            = 'error';
             r.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
         }
-
         res.status(200).send(r);
     }))
 }

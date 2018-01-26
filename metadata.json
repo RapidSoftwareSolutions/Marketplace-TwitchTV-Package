@@ -189,14 +189,46 @@
         },
         {
           "name": "broadcasts",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "Returns only broadcasts when `true`. Otherwise only highlights are returned. Default is `false`",
           "required": false
         },
         {
           "name": "hls",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`",
+          "required": false
+        },
+        {
+          "name": "broadcastType",
+          "type": "list",
+          "structure":{
+            "name":"type",
+            "type":"Select",
+            "options":["archive","highlight","upload"],
+            "info":"Single type."
+          },
+          "info": "Constrains the type of videos returned. Valid values: (any combination of) archive, highlight, upload. Default: all types (no filter).",
+          "required": false
+        },
+        {
+          "name": "language",
+          "type": "Select",
+          "structure":{
+            "name":"language",
+            "type":"String",
+            "info":"Single language."
+          },
+          "info": "Constrains the language of the videos that are returned; for example, en,es. Default: all languages.",
+          "required": false
+        },
+        {
+          "name": "sort",
+          "type": "Select",
+          "options":["views","time"],
+          "info": "Sorting order of the returned objects. Valid values: views, time. Default: time (most recent first).",
           "required": false
         }
       ]
@@ -312,7 +344,8 @@
         },
         {
           "name": "channelFeedEnabled",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "Whether the channel's feed is enabled. Requires the channel owner's OAuth token",
           "required": false
         }
@@ -468,7 +501,8 @@
         },
         {
           "name": "share",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "When set to true, shares the post, with a link to the post URL, on the channel's Twitter if it's connected",
           "required": false
         }
@@ -670,7 +704,12 @@
         },
         {
           "name": "emotesets",
-          "type": "String",
+          "type": "List",
+          "structure":{
+            "name":"singleEmoteset",
+            "type":"String",
+            "info":"Single emoteset."
+          },
           "info": "Emotes from a comma separated list of emote sets",
           "required": false
         }
@@ -694,13 +733,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "(deprecated) Object offset for pagination. Default is 0. Maximum is 1600",
           "required": false
         },
@@ -775,7 +814,8 @@
         },
         {
           "name": "notifications",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "Whether :user should receive email/push notifications (depending on their notification settings) when :target goes live. Default is false",
           "required": false
         }
@@ -862,13 +902,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         }
@@ -972,7 +1012,8 @@
         },
         {
           "name": "hls",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "If set to `true`, only returns streams using HLS. If set to `false`, only returns streams that are non-HLS",
           "required": false
         }
@@ -998,11 +1039,12 @@
           "name": "type",
           "type": "String",
           "info": "Suggests a list of games similar to query, e.g. 'star' query might suggest 'StarCraft II: Wings of Liberty'",
-          "required": false
+          "required": true
         },
         {
           "name": "live",
-          "type": "Boolean",
+          "type": "Select",
+          "options":["true","false"],
           "info": "If true, only returns games that are live on at least one channel",
           "required": false
         }
@@ -1050,13 +1092,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         },
@@ -1087,13 +1129,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         }
@@ -1142,13 +1184,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 25. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         },
@@ -1346,13 +1388,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         },
@@ -1395,13 +1437,13 @@
         },
         {
           "name": "limit",
-          "type": "String",
+          "type": "Number",
           "info": "Maximum number of objects in array. Default is 10. Maximum is 100",
           "required": false
         },
         {
           "name": "offset",
-          "type": "String",
+          "type": "Number",
           "info": "Object offset for pagination. Default is 0",
           "required": false
         },

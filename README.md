@@ -113,6 +113,10 @@ Get channel's list of videos
 | offset    | Number     | Object offset for pagination. Default is 0
 | broadcasts| Boolean    | Returns only broadcasts when `true`. Otherwise only highlights are returned. Default is `false`
 | hls       | Boolean    | Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`
+| broadcastType    | String     | Constrains the type of videos returned. Valid values: (any combination of) archive, highlight, upload. Default: all types (no filter).
+| language    | String     | Constrains the language of the videos that are returned; for example, en,es. Default: all languages.
+| sort    | String     | Sorting order of the returned objects. Valid values: views, time. Default: time (most recent first).
+
 
 ## TwitchTV.getChannelFollowingUsers
 Get channel's list of following users
