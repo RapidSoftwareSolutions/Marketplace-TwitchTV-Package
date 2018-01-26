@@ -215,7 +215,7 @@
         },
         {
           "name": "language",
-          "type": "Select",
+          "type": "List",
           "structure":{
             "name":"language",
             "type":"String",
