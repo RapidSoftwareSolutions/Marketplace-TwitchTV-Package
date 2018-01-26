@@ -203,7 +203,7 @@
         },
         {
           "name": "broadcastType",
-          "type": "list",
+          "type": "List",
           "structure":{
             "name":"type",
             "type":"Select",
