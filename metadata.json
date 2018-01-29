@@ -197,7 +197,7 @@
         {
           "name": "hls",
           "type": "Select",
-          "options": ["true", ],
+          "options": ["true", "false"],
           "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`",
           "required": false
         },
