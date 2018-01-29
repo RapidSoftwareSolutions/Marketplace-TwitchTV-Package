@@ -51,7 +51,7 @@ for(let func in control) {
         try {
             let api = new API(API_ENDPOINT + url, {
                 headers: {
-                    'Accept':        'application/vnd.twitchtv.v3+json',
+                    'Accept':        'application/vnd.twitchtv.v5+json',
                     'Client-ID':     req.body.args['clientId'],
                     'Authorization': 'OAuth ' + req.body.args['accessToken']
                 }
