@@ -196,13 +196,8 @@
         },
         {
           "name": "hls",
-          "type": "List",
-          "structure":{
-            "name":"type",
-            "type":"Select",
-            "options":["archive","highlight","upload"],
-            "info":"Single type."
-          },
+          "type": "Select",
+          "options": ["true", ],
           "info": "Returns only HLS VoDs when `true`. Otherwise only non-HLS VoDs are returned. Default is `false`",
           "required": false
         },
