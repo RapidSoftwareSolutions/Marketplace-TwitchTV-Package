@@ -39,7 +39,7 @@ Example: ...&redirect_uri=[`redirectUri`]&scope=`user_read+user_blocks_edit+chan
 + `channel_feed_read`: Ability to view to a channel feed.
 + `channel_feed_edit`: Ability to add posts and reactions to a channel feed.
 
-Read more about Twitch Authentication: https://dev.twitch.tv/docs/authentication
+Read more about Twitch Authentication: [https://dev.twitch.tv/docs/authentication](https://dev.twitch.tv/docs/authentication)
 
 ## Custom datatypes:
  |Datatype|Description|Example

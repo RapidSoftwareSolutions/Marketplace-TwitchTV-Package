@@ -77,16 +77,15 @@ for(let func in control) {
                 }
             }
 
-            if(func == 'getChannelVideos' && options.query['broadcastType|String'])
+            if(func == 'getChannelVideos' && options.query['broadcast_type|String'])
             {
-                    options.query['broadcastType|String'] = options.query['broadcastType|String'].join(',');
+                    options.query['broadcast_type|String'] = options.query['broadcast_type|String'].join(',');
             }
 
             if(func == 'getChannelVideos' && options.query['language|String'])
             {
                     options.query['language|String'] = options.query['language|String'].join(',');
             }
-
 
             response              = yield api.request(options);
             r.callback            = 'success';
